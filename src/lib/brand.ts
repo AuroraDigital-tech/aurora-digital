@@ -1,17 +1,19 @@
+import { siteSettings } from "@/lib/site-settings";
+
 export const brand = {
   name: "Aurora Digital",
   short: "Aurora",
-  city: "Leopoldina",
-  state: "MG",
-  region: "Leopoldina, MG · Todo o Brasil",
+  city: siteSettings.city,
+  state: siteSettings.state,
+  region: `${siteSettings.city}, ${siteSettings.state} · Todo o Brasil`,
   domain: "auroradigital.com.br",
-  whatsappE164: "5532999071294",
-  whatsappDisplay: "(32) 99907-1294",
+  whatsappE164: siteSettings.whatsappE164,
+  whatsappDisplay: siteSettings.whatsappDisplay,
   whatsappIntro: "Olá, Aurora Digital. Vim pelo site e quero um orçamento.",
-  email: "contato@auroradigital.com.br",
+  email: siteSettings.email,
   instagram: {
-    handle: "@auroradigital.tech",
-    href: "https://www.instagram.com/auroradigital.tech/",
+    handle: siteSettings.instagramHandle,
+    href: siteSettings.instagramHref,
   },
   eyebrow: "Tecnologia · Automação · Soluções digitais",
   tagline: "Simplifica. Automatiza. Conecta.",
