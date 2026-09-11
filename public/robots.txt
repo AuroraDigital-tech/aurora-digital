@@ -3,3 +3,4 @@ Allow: /
 Disallow: /api
 Disallow: /auth
 Disallow: /admin
+Disallow: /instagram
