@@ -1,0 +1,53 @@
+/** Shared with Vite (dev) and Nitro (publish). Do not send X-Frame-Options —
+ *  the live preview is an iframe. */
+
+const CSP = [
+  "default-src 'self'",
+  "base-uri 'self'",
+  "object-src 'none'",
+  "frame-src 'none'",
+  "child-src 'none'",
+  "worker-src 'self'",
+  "manifest-src 'self'",
+  "form-action 'self'",
+  "script-src 'self' 'unsafe-inline' https://grok.com",
+  "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
+  "font-src 'self' https://fonts.gstatic.com data:",
+  "img-src 'self' data: blob:",
+  "connect-src 'self' ws: wss: https://grok.com",
+  "media-src 'self'",
+  "upgrade-insecure-requests",
+].join("; ");
+
+export const SECURITY_HEADERS: Record<string, string> = {
+  "Content-Security-Policy": CSP,
+  "X-Content-Type-Options": "nosniff",
+  "Referrer-Policy": "strict-origin-when-cross-origin",
+  "Permissions-Policy": [
+    "accelerometer=()",
+    "autoplay=()",
+    "camera=()",
+    "display-capture=()",
+    "encrypted-media=()",
+    "fullscreen=()",
+    "geolocation=()",
+    "gyroscope=()",
+    "magnetometer=()",
+    "microphone=()",
+    "midi=()",
+    "payment=()",
+    "picture-in-picture=()",
+    "publickey-credentials-get=()",
+    "screen-wake-lock=()",
+    "usb=()",
+    "web-share=()",
+    "xr-spatial-tracking=()",
+    "interest-cohort=()",
+  ].join(", "),
+  "X-DNS-Prefetch-Control": "off",
+  "X-Permitted-Cross-Domain-Policies": "none",
+  "Cross-Origin-Opener-Policy": "same-origin-allow-popups",
+  "Cross-Origin-Resource-Policy": "same-origin",
+  "Origin-Agent-Cluster": "?1",
+  "Strict-Transport-Security": "max-age=31536000; includeSubDomains",
+};
