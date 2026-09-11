@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { createFileRoute } from "@tanstack/react-router";
 import { Wordmark } from "@/components/logo";
-import { adminLogin, adminSave, adminStatus } from "@/lib/admin.server";
+import { adminLogin, adminSave, adminStatus } from "@/lib/admin";
 import type { SiteSettings } from "@/lib/site-settings";
 
 export const Route = createFileRoute("/admin")({
